@@ -1,5 +1,4 @@
 import turtle
-import math
 
 #Instantiate Leonardo the turtle
 window = turtle.Screen()
@@ -29,21 +28,25 @@ def draw_sierpinksi(size, depth):
 
             #Position for second triangle
             leo.penup()
-            leo.setpos((leo.xcor() + size/2),leo.ycor())
+            leo.forward(size/2)
             leo.pendown()
 
             make_triangles(size/2, depth-1)
 
             #Position for third triangle
             leo.penup()
-            leo.setpos((leo.xcor()-(size/2)*math.cos(math.pi/3)),(leo.ycor()+(size/2)*math.sin(math.pi/3)))
+            leo.left(120)
+            leo.forward(size/2)
+            leo.right(120)
             leo.pendown()
 
             make_triangles(size/2, depth-1)
 
             #Position at origin relative to current depth
-            leo.penup()
-            leo.setpos((leo.xcor()-(size/2)*math.cos(math.pi/3)),(leo.ycor()-(size/2)*math.sin(math.pi/3)))
+            leo.penup()        
+            leo.left(60)
+            leo.back(size/2)
+            leo.right(60)
             leo.pendown()
 
     make_triangles(size, depth)
