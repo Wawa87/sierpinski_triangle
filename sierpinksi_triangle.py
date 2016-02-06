@@ -48,4 +48,4 @@ def draw_sierpinksi(size, depth):
 
     make_triangles(size, depth)
 
-draw_sierpinksi(400, 2)
+draw_sierpinksi(400, 4)
